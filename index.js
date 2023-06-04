@@ -9,7 +9,16 @@ expressServer.listen(port, () => {
 });
 
 expressServer.get('/motivationalQuotes', (req,res) => {
-    console.log('my first route');
     console.log(req.body);
-    res.json(quotes);
+    let quoteType = req.body.type;
+    if(!quoteType){
+        let quotesArr = [...quotes];
+        let randomIndex = Math.floor( Math.random() * (quotesArr.length) )
+        res.json(quotesArr[randomIndex]);
+    }else{
+        //end randmosied quote of specific type selected by user
+        let quotesArr = [...quotes];
+        
+       //selectedQuoteTypeArr = 
+    }
 })
