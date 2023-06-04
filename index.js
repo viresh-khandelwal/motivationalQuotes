@@ -1,4 +1,5 @@
 const express = require('express');
+const quotes = require('./data/quotes.json');
 
 expressServer = express();
 const port = 3000;
@@ -8,5 +9,5 @@ expressServer.listen(port, () => {
 
 expressServer.get('/motivationalQuotes', (req,res) => {
     console.log('my first route');
-    res.send('my first response');
+    res.json(quotes);
 })

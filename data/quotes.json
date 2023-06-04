@@ -1,0 +1,17 @@
+[
+    {
+        "type": "business",
+        "by": "Richard Branson",
+        "quote": "Business opportunities are like buses, there's always another one coming."
+    },
+    {
+        "type": "life",
+        "by": "Nelson Mandela",
+        "quote": "The greatest glory in living lies not in never falling, but in rising every time we fall."
+    },
+    {
+        "type": "health",
+        "by": "Denis Waitley",
+        "quote": "Time and health are two precious assets that we don't recognize and appreciate until they have been depleted."
+    }
+]
