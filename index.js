@@ -11,14 +11,10 @@ expressServer.listen(port, () => {
 expressServer.get('/motivationalQuotes', (req,res) => {
     console.log(req.body);
     let quoteType = req.body.type;
-    if(!quoteType){
-        let quotesArr = [...quotes];
-        let randomIndex = Math.floor( Math.random() * (quotesArr.length) )
-        res.json(quotesArr[randomIndex]);
-    }else{
-        //end randmosied quote of specific type selected by user
-        let quotesArr = [...quotes];
-        
-       //selectedQuoteTypeArr = 
+    let quotesArr = [...quotes];
+    if(quoteType){
+        quotesArr = quotes.filter((quote) => quote.type === quoteType);
     }
+    let randomIndex = Math.floor( Math.random() * (quotesArr.length) );
+    res.json(quotesArr[randomIndex]);
 })
