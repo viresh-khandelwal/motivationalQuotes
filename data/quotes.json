@@ -16,5 +16,23 @@
         "by": "Denis Waitley",
         "quote": "Time and health are two precious assets that we don't recognize and appreciate until they have been depleted.",
         "id": "3"
+    },
+    {
+        "type": "life",
+        "by": "May alcott",
+        "quote": "I am not afraid of storms, for I am learning how to sail my ship.",
+        "id": "4"
+    },
+    {
+        "type": "health",
+        "by": "Naval Ravikant",
+        "quote": "A fit body, a calm mind, a house full of love. These things cannot be bought they must be earned.",
+        "id": "5"
+    },
+    {
+        "type": "business",
+        "by": "Seth godin",
+        "quote": "There's no shortage of remarkable ideas, what's missing is the will to execute them.",
+        "id": "6"
     }
 ]
