@@ -22,3 +22,18 @@ expressServer.get('/motivationalQuotes', (req,res) => {
     let randomIndex = Math.floor( Math.random() * (quotesArr.length) );
     res.json(quotesArr[randomIndex]);
 })
+
+expressServer.get('/favoriteQuotes', (req,res) => {
+    console.log(req.body);
+    let favoriteQuoteIds = req.body.IDs;
+    let quotesArr = [];
+    if(favoriteQuoteIds){
+        quotesArr = quotes.filter((quote) => {
+           if(favoriteQuoteIds.indexOf(quote.id) !== -1){
+               return true;
+           }
+        });
+    }
+    let randomIndex = Math.floor( Math.random() * (quotesArr.length) );
+    res.json(quotesArr[randomIndex]);
+})
