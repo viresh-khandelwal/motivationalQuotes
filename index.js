@@ -52,3 +52,34 @@ expressServer.get('/favoriteQuotes', (req,res) => {
     let randomIndex = Math.floor( Math.random() * (quotesArr.length) );
     res.json(quotesArr[randomIndex]);
 })
+
+
+//qoutes DB schema
+const quotesSchema = mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
+    type: String,
+    by: String,
+    quote: String
+   })
+   
+
+//quotes DB Model 
+const quotesModel = mongoose.model('Quotes', quotesSchema);
+
+
+expressServer.post('/addquote', (req,res) => {
+    console.log(req.body);
+    const id = new mongoose.Types.ObjectId();
+    const quoteObj = Object.assign({
+        _id: id
+    },req.body);
+
+    const newQuote = new quotesModel(quoteObj);
+    newQuote.save().then((err,data) => {
+        if(err)
+        res.send(err)
+        else
+        res.json(data)
+    }) 
+
+})
